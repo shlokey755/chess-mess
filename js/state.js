@@ -7,6 +7,7 @@ const GameState = {
   validMoves: [],
   boardSize: 6,
   log: [],
+  gameOver: false,
 
   reset() {
     this.board = Array(6).fill(null).map(() => Array(6).fill('grass'));
@@ -23,11 +24,12 @@ const GameState = {
     this.selectedUnit = null;
     this.validMoves = [];
     this.boardSize = 6;
-    this.log = ['Game started!'];
+    this.log = ['Game started! Player 1 goes first.'];
+    this.gameOver = false;
   },
 
   addLog(msg) {
     this.log.push(msg);
-    if (this.log.length > 5) this.log.shift();
+    if (this.log.length > 6) this.log.shift();
   }
 };

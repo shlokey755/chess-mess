@@ -8,20 +8,87 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1>Micro-Strategy</h1>
-      <div class="turninfo">
-        <span id="turn-count">Turn 0</span>
-        <span id="current-player">Player 1</span>
-        <button id="new-game">New Game</button>
+    
+    <div id="rules-screen" class="screen active">
+      <div class="rules-panel">
+        <h1>Micro-Strategy</h1>
+        <p class="subtitle">1v1 Tactical Grid Battle</p>
+
+        <div class="rules-section">
+          <h2>The Core</h2>
+          <p>Shrinking grid battle. Last player standing wins. Board loses 1 row/column every 3 turns.</p>
+        </div>
+
+        <div class="rules-section">
+          <h2>Your Units</h2>
+          <div class="unit-rule">
+            <span class="icon">♞</span>
+            <div>
+              <strong>Knight</strong> — Jumps 2 squares (L-shaped). Hits hard. Your speed pick.
+            </div>
+          </div>
+          <div class="unit-rule">
+            <span class="icon">✦</span>
+            <div>
+              <strong>Mage</strong> — 2-square range (plus cross). Weak but ranged. Control the midfield.
+            </div>
+          </div>
+          <div class="unit-rule">
+            <span class="icon">⚔</span>
+            <div>
+              <strong>Brawler</strong> — 1 square all directions. Tough tank (4 HP). Slow but strong.
+            </div>
+          </div>
+        </div>
+
+        <div class="rules-section">
+          <h2>How to Play</h2>
+          <ol>
+            <li>Click a unit to see its movement range (highlighted in yellow)</li>
+            <li>Click a highlighted square to move or attack</li>
+            <li>Each player gets 1 move per turn</li>
+            <li>Attack deals 1 damage (2 for Brawler). Units have 2-4 HP</li>
+            <li>Every 3 turns the board shrinks — units outside die</li>
+          </ol>
+        </div>
+
+        <div class="rules-section">
+          <h2>Win Condition</h2>
+          <p>Eliminate all enemy units. Or outlast them as the board shrinks.</p>
+        </div>
+
+        <button id="start-game" class="btn-primary">Start Game (2 Players)</button>
+        <p class="footer-text">Pass the device between turns. Player 1 (Blue) goes first.</p>
       </div>
     </div>
 
-    <div class="game-board" id="board"></div>
+    <div id="game-screen" class="screen">
+      <div class="game-header">
+        <h1>Micro-Strategy</h1>
+        <div class="header-right">
+          <div class="turninfo">
+            <span id="turn-count">Turn 0</span>
+            <span id="current-player">Player 1</span>
+          </div>
+          <button id="back-to-rules">Back to Rules</button>
+          <button id="new-game" class="btn-danger">New Game</button>
+        </div>
+      </div>
 
-    <div class="log" id="log">
-      <div class="log-entry">Game started!</div>
+      <div class="game-board" id="board"></div>
+
+      <div class="game-footer">
+        <div class="log" id="log">
+          <div class="log-entry">Game started!</div>
+        </div>
+        <div class="legend">
+          <span><strong>Blue:</strong> Player 1</span>
+          <span><strong>Red:</strong> Player 2</span>
+          <span><strong>Yellow highlight:</strong> Valid moves</span>
+        </div>
+      </div>
     </div>
+
   </div>
 
   <script src="js/state.js"></script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro-Strategy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Micro-Strategy</h1>
+      <div class="turninfo">
+        <span id="turn-count">Turn 0</span>
+        <span id="current-player">Player 1</span>
+        <button id="new-game">New Game</button>
+      </div>
+    </div>
+
+    <div class="game-board" id="board"></div>
+
+    <div class="log" id="log">
+      <div class="log-entry">Game started!</div>
+    </div>
+  </div>
+
+  <script src="js/state.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/units.js"></script>
+  <script src="js/mutations.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
